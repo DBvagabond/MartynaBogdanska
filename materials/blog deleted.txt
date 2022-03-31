@@ -1,0 +1,23 @@
+<section class="blog">
+        <div class="container">
+           <div id="wrapper">
+               <div id="header"> 
+                Moje wpisy
+               </div>
+               <div id="content">
+                   <div class="post">
+                       <h1>post title</h1>
+                       <p>sample text</p>
+                       <img src="images/003.jpg" alt="sesja z posta">
+                       <a href="#" class="post-more">Zobacz więcej</a>
+                   </div>
+                   <div class="post">
+                       <h1>post title 2</h1>
+                       <p>sample text 2</p>
+                       <img src="images/001.jpg" alt="sesja z posta">
+                       <a href="#" class="post-more">Zobacz więcej</a>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </section>
