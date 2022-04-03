@@ -21,8 +21,8 @@
                         
                         <li class="current"><a href="#">HOME</a></li>
                         <li><a href="#anchor2">PORTFOLIO</a></li>
-                        <li><a href="#anchor1">KONTAKT</a></li>
                         <li><a href="#anchor1">O MNIE</a></li>
+                        <li><a href="#anchor3">KONTAKT</a></li>
                         
                     </ul>
                 </div>
@@ -53,7 +53,7 @@
     </section>
     <section class="portfolio-gallery">
         <div class="portfolio">     
-            <div class="gallery-container">
+            <div class="gallery-container w-2">
                 <div class="gallery-item">
                     <div class="image">
                         <a href="images/slubna/1.jpg" data-lightbox="mygallery1"><img src="images/slubna/1.jpg" alt="couple"></a>
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="gallery-container">
+            <div class="gallery-container h-2">
                 <div class="gallery-item">
                     <div class="image">
                         <a href="https://source.unsplash.com/1600x900/?baby" data-lightbox="mygallery"><img src="https://source.unsplash.com/1600x900/?baby" alt="couple"></a>
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="gallery-container w-2">
+            <div class="gallery-container w-2 h-2">
                 <div class="gallery-item">
                     <div class="image">
                         <a href="https://source.unsplash.com/1600x900/?party" data-lightbox="mygallery"><img src="https://source.unsplash.com/1600x900/?party" alt="couple"></a>
@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="gallery-container">
+            <div class="gallery-container h-2">
                 <div class="gallery-item">
                     <div class="image">
                         <a href="https://source.unsplash.com/1600x900/?woman" data-lightbox="mygallery"><img src="https://source.unsplash.com/1600x900/?woman" alt="couple"></a>
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="gallery-container w-2">
+            <div class="gallery-container w-3">
                 <div class="gallery-item">
                     <div class="image">
                         <a href="https://source.unsplash.com/1600x900/?men" data-lightbox="mygallery"><img src="https://source.unsplash.com/1600x900/?men" alt="couple"></a>
@@ -174,7 +174,7 @@
                 Tak tak, ja też miewam emocje :)
             </div>
             <div class="contact-text">
-                <a href="#" class="contact-cta">Skontaktuj się ze mną</a>
+                <a href="#anchor3"class="contact-cta">Skontaktuj się ze mną</a>
                 <div class="picture">
                          <img src="images/martynabogdanska.jpg" alt="Martyna Bogdańska">
                 </div>
@@ -187,10 +187,83 @@
            </div>
         </div>
     </section>
-    
-    <section class="oferta">
-        
-    </section>
+    <div id="anchor3" class="form">
+        <div class="container">
+            <header>
+                <h1>Formularz Kontaktowy</h1>
+            </header>
+            <form action="https://formsubmit.co/dominik9922@gmail.com" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="ximie">Imię</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="ximie" name="imię" placeholder="Imię" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xnazwisko">Nazwisko</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xnazwisko" name="nazwisko" placeholder="Nazwisko" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xdata">Data Wydarzenia</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" id="xdata" name="data" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xprzyjecie">Miejsce przyjęcia</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xprzyjecie" name="przyjecie" placeholder="miejsce przyjęcia">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xceremonia">Miejsce ceremonii</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xceremonia" name="ceremonia" placeholder="miejsce ceremonii">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xemail">Twój email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" id="xemail" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xphone">Twój numer telefonu</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="tel" id="xphone" name="phone" id="phone" placeholder="telefon">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xwiadomość">Wiadomość do mnie</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xwiadomość" name="wiadomość" placeholder="wiadomość">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button type="submit">Wyślij</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script>
 
