@@ -262,6 +262,36 @@ nav {
     }
 }
 
+.instagrid img {
+    display: block;
+    width: 100%;
+}
+
+.instagrid {
+    padding: 0;
+    margin: 0;
+}
+
+.instagram {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.instalink {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1em 1em;
+
+    a {
+        color: black;
+    }
+}
+
 .form header {
     color: var(--secondary-color);
     text-align: center;
@@ -413,6 +443,11 @@ button:hover {
         margin-bottom: 2em;
         margin-top: 1em;
         
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
     }
 
     .col-25 {
