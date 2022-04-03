@@ -77,39 +77,27 @@ section {
   display: inline-block;
 }
 
-.post-more {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  text-decoration: none;
-  padding: .6em 1.3em;
-  font-size: 1.4em;
-  border-style: solid;
-  border-width: thin;
-  border-radius: 5em;
-  border-color: var(--secondary-color);
-  font-weight: bold;
-  display: inline-block;
-}
-
 .portfolio-section {
   color: var(--secondary-color);
   text-align: center;
+  padding-bottom: 0;
 }
 
 .portfolio-section header {
-  font-size: 2.5em;
+  font-size: 2.3em;
 }
 
 .portfolio-selection ul {
-  margin: 0 auto;
+  margin: 0 0;
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
+  display: inline-block;
 }
 
 .portfolio-selection ul li {
   float: left;
-  padding: 1.1em;
+  padding: 0.9em;
 }
 
 .portfolio-selection ul li:hover {
@@ -125,6 +113,10 @@ section {
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   grid-auto-flow: dense;
+}
+
+.portfolio-gallery {
+  padding-top: 0;
 }
 
 .gallery-item {
@@ -177,7 +169,7 @@ section {
 }
 
 .w-1, .w-2, .w-3, .w-4, .w-5, .w-6 {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .h-1 {
@@ -229,10 +221,6 @@ section {
   height: auto;
 }
 
-.post .img {
-  size: 50px 70px;
-}
-
 .textarea {
   max-width: 90%;
   text-align: center;
@@ -274,10 +262,71 @@ nav li a:hover {
   font-weight: bold;
 }
 
+.form header {
+  color: var(--secondary-color);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-bottom: 0;
+  padding-top: 0.5em;
+}
+
+.form {
+  padding: 0;
+  margin-top: 0;
+}
+
 .mobile-menu-exit {
   padding-bottom: 2em;
   margin: .5em;
   cursor: pointer;
+}
+
+.form .container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding-bottom: 50px;
+  padding-top: 0;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: .6em 1.3em;
+  font-size: 1em;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5em;
+  border-color: var(--secondary-color);
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+  margin-right: 9%;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.col-25, .col-75 {
+  width: 90%;
+  margin-top: 0;
+  padding-left: 3%;
 }
 
 @media screen and (min-width: 812px) {
@@ -350,6 +399,22 @@ nav li a:hover {
     margin-right: auto;
     margin-bottom: 2em;
     margin-top: 1em;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    padding-left: 5em;
+  }
+  .col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 /*# sourceMappingURL=main.css.map */
