@@ -360,6 +360,35 @@ button:hover {
   padding-left: 3%;
 }
 
+.thankyou {
+  text-align: center;
+}
+
+.thankyou .message h1 {
+  padding-top: 15%;
+  color: var(--secondary-color);
+}
+
+.homepagecta {
+  margin-top: 2em;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: .6em 1.3em;
+  font-size: 1.4em;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5em;
+  border-color: var(--secondary-color);
+  font-weight: bold;
+  display: inline-block;
+}
+
+.homepagecta:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
 @media screen and (min-width: 812px) {
   .mobile-menu, .mobile-menu-exit {
     display: none;
