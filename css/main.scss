@@ -37,6 +37,30 @@ body {
     .mobile-menu {
         cursor: pointer;
     }
+
+    .dropdown-content {
+        display: none;
+        background-color: white;
+        width: auto;
+        z-index: 999;
+        position: inherit;
+    }
+
+    .dropdown-content a {
+        color: var(--secondary-color);
+        padding: 12px 12px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+
 } 
 
 a {
@@ -116,6 +140,10 @@ section {
 
 .portfolio-gallery {
     padding-top: 0;
+}
+
+.portfolio-gallery1 {
+    padding-top: 2em;
 }
 
 .gallery-item {
