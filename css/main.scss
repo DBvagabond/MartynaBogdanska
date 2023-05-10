@@ -7,6 +7,8 @@ html {
 :root {
     --primary-color: white;
     --secondary-color: #8b6561;
+    --footer: #faf7f7;
+    --gradient: linear-gradient(to bottom, #ffffff, #f9f6f6 25%, #faf7f7 50%, #f9f6f6 75%, #ffffff);
 }
 
 body {
@@ -18,15 +20,10 @@ body {
 
 .navbar {
     background: (var(--primary-color));
-    padding: 1em 2em 4em 2em;
-    height: 5em;
 
     .logo img {
        width: 15em;
-    }
-    
-    nav {
-        display: none;
+       padding-left: 1em;
     }
     
     .container {
@@ -37,28 +34,35 @@ body {
     .mobile-menu {
         cursor: pointer;
     }
-
+    
     .dropdown-content {
-        display: none;
-        background-color: white;
-        width: auto;
+        visibility: hidden;
+        background-color: var(--primary-color);
+        width: inherit;
         z-index: 999;
-        position: inherit;
-    }
-
-    .dropdown-content a {
-        color: var(--secondary-color);
-        padding: 12px 12px;
-        text-decoration: none;
-        text-align: center;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: visibility 0s, opacity 0.5s, max-height 0.5s;
+        transition: background-color 0.2s ease-out;
     }
 
     .dropdown:hover .dropdown-content {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        max-height: 500px;
+    }
+    
+    .dropdown-content a {
+        color: var(--secondary-color);
+        padding: 12px;
+        text-decoration: none;
+        text-align: center;
     }
     
     .dropdown-content a:hover {
-        background-color: #f1f1f1
+        background-color: var(--footer);
+        transition: background-color 0.2s ease-in;
     }
 
 } 
@@ -68,24 +72,45 @@ a {
     color: (var(--secondary-color));
 }
 
-
+a, button, input[type="submit"], input[type="button"] {
+    transition: all 0.2s ease-out;
+}
+  
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-section {
-    padding: 2em 0;
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: auto; 
 }
 
-.hero-image {
-  padding: 29em 10em 29em 10em;
-  background-image: url("/images/swiateczne/IMG_9892.jpg");  
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+.hero-image { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    .hero-img {
+        min-width: 100%;
+        object-fit: cover;
+        min-height: 100vh;
+        max-height: 888px;
+        max-width: 100%;
+    }
 }
+
+.hero-image.active {
+    opacity: 1;
+    z-index: 1;
+}
+
 
 .contact-cta {
     background:(var(--primary-color));
@@ -102,10 +127,29 @@ section {
 }
 
 
+#prev-button,
+#next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+#prev-button {
+    left: 20px;
+}
+  
+#next-button {
+    right: 20px;
+}
+
 .portfolio-section {
     color: var(--secondary-color);
     text-align: center;
-    padding-bottom: 0;
+    padding: 0;
 }
 
 .portfolio-section header {
@@ -113,29 +157,35 @@ section {
 }
 
 .portfolio-selection ul { 
-    margin: 0 0;
-    width: fit-content;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 
     li {
-        float: left;
-        padding: 0.9em;
+        margin: 0 1em;
+        padding: 1rem;
+        transition: background-color 0.2s ease-in-out;
 
         &:hover {
-            font-weight: bold;
+            background-image: linear-gradient(to bottom, #ffffff, #f9f6f6 25%, #f9f6f6 50%, #f9f6f6 75%, #f9f6f6);
         }
+        
     }
 }
 
 .portfolio {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: 300px 400px;
+    grid-auto-rows: 300px;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     grid-auto-flow: dense;
+
+    .pc {
+        display: none;
+    }
 }
 
 .portfolio-gallery {
@@ -219,14 +269,25 @@ section {
 }
 
 .contact {
-    padding: 0 3em 0 3em;
-    margin-bottom: 2em;
+    
+    height: auto;
+    padding-top: 5%;
     text-align: center;
     color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h1 {
         color: var(--secondary-color);
     }
+
+}
+
+.contact a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .picture {
@@ -258,6 +319,7 @@ nav.menu-btn {
 }
 
 nav {
+    display: none;
     position: fixed;
     z-index: 999;
     width: 66%;
@@ -267,14 +329,11 @@ nav {
     height: 100vh;
     padding: 1em;
 
-    ul.primary {
-        margin-top: 0.5em;
-    }
 
     li {
 
         a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             display: block;
             padding: 0.5em;
@@ -290,21 +349,21 @@ nav {
     }
 }
 
-.instagrid img {
-    display: block;
-    width: 100%;
-}
-
 .instagrid {
     padding: 0;
     margin: 0;
+    text-align: center;
+
+    img {
+        display: block;
+        width: 100%;
+    }
 }
 
 .instagram {
+    padding-top: 5%;
+    padding-bottom: 5%;
     position: relative;
-    text-align: center;
-    padding: 0;
-    margin: 0;
 }
 
 .instalink {
@@ -316,22 +375,24 @@ nav {
     padding: 1em 1em;
 
     a {
-        color: black;
+        color: var(--secondary-color);
+        transform: none;
     }
 }
 
 .form header {
+    margin: 0;
+    padding: 0.5em;
     color: var(--secondary-color);
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    padding-bottom: 0;
-    padding-top: 0.5em;
 }
 
 .form {
+    background-color: var(--footer);
     padding: 0;
-    margin-top: 0;
+    padding-bottom: 1em;
 }
 
 .mobile-menu-exit {
@@ -417,20 +478,17 @@ button:hover {
 }
 
 .bottom {
-    background-color: rgb(245, 245, 245);
+    background-color: var(--footer);
     display: block;
     text-align: center;
     color: grey;
+    padding-top: 10px;
 
     .logofoot {
         display: none;
     }
 
-    .social {
-        padding: 0.5em 0 0 0;
-    }
 }
-
 
 @media screen and (min-width: 812px) {
 
@@ -444,41 +502,47 @@ button:hover {
     }
 
     .navbar nav {
+        position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         background: none;
-        position: unset;
         height: auto;
         width: 100%;
         padding: 0;
 
-        ul.primary {
-            margin-top: 4.75em;
-        }
 
         ul {
             display: flex;
-        }
-
-        li {
-            
-            a {
-                color: var(--secondary-color);
-                font-size: 1em;
-                padding: .1em 1em;
+            li {
+                width: 150px;
+                a {
+                    color: var(--secondary-color);
+                    font-size: 1em;
+                    text-align: center;
+                }
             }
         }
         
     }
 
-    a.social {
-        position: relative;
-        top: -15%;
-        padding-left: 1em;
+    .dropdown-content {
+        position: absolute;
+    }
+
+    .portfolio-gallery {
+        display: block;
+    }
+
+    .portfolio-section {
+        display: block;
     }
 
     .portfolio {
         grid-template-columns: repeat(6,2fr);
+        .pc {
+            display: block;
+        }
     }
 
     .w-1 {
@@ -539,11 +603,9 @@ button:hover {
         clear: both;
     }
 
-    .insidebottom {
-        display: inline-flex;
-
+    .footer {
         .copyright {
-            padding: 1em 0 0 1em;
+            padding: 0;
          }
     }
 }

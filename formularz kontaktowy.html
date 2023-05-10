@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martyna Bogdańska Fotografia</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+
+            <a class="logo" href="#"> <img src="images/BLACK hori.png" alt="Martyna Bogdańska Fotografia"></a>
+
+            <img src="images/menu.svg" id="mobile-cta" class="mobile-menu" alt="Otwórz Menu">
+            <nav>
+                <div class="nav">
+                    <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Zamknij menu">
+                    <ul class="primary">
+                        
+                        <li class="current"><a href="index.html">HOME</a></li>
+                        <li class="dropdown"><a href="#anchor2">PORTFOLIO</a>
+                            <div class="dropdown-content">
+                                <a href="#">ślub</a>
+                                <a href="#">chrzest</a>
+                                <a href="#">świąteczne</a>
+                                <a href="#">plener</a>
+                            </div>
+                        </li>
+                        <li><a href="#anchor1">O MNIE</a></li>
+                        <li><a href="formularz kontaktowy.html">KONTAKT</a></li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="form">
+        <div class="form">
+            <header>
+                <h1>Formularz Kontaktowy</h1>
+            </header>
+            <form action="https://formsubmit.co/dominik9922@gmail.com" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="ximie">Imię</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="ximie" name="imię" placeholder="Twoje imię..." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xnazwisko">Nazwisko</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xnazwisko" name="nazwisko" placeholder="Twoje nazwisko..." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xdata">Data Wydarzenia</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" id="xdata" name="data" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xprzyjecie">Miejsce przyjęcia</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xprzyjecie" name="lokalizacja przyjęcia..." placeholder="miejsce przyjęcia...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xceremonia">Miejsce ceremonii</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xceremonia" name="lokalizacja ceremonii..." placeholder="miejsce ceremonii...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xemail">Twój email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" id="xemail" name="email" placeholder="Twój email..." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xphone">Twój numer telefonu</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="tel" id="xphone" name="phone" id="phone" placeholder="Twój numer telefonu...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="xwiadomość">Wiadomość do mnie</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="xwiadomość" name="wiadomość" placeholder="Napisz do mnie wiadomość!">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button type="submit">Wyślij</button>
+                </div>
+                <input type="hidden" name="_next" value="https://dbvagabond.github.io/MartynaBogdanska/dziekuje.html#">
+                <input type="hidden" name="_subject" value="Nowa wiadomość ze strony">
+                <input type="hidden" name="_captcha" value="false">
+                <!input type="hidden" name="_autoresponse" value="your custom message">
+                <input type="hidden" name="_template" value="table">
+
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="footer">
+            <div class="social">
+                <a class="btn" href="https://www.facebook.com/martynabogdanskafotografia"> <img src="images/facebook_button.png" alt="facebook"></a>
+                <a class="btn" href="https://www.instagram.com/martynabogdanskafotografia"> <img src="images/instagram_button.png" alt="instagram"></a>
+            </div>
+            <div class="copyright">
+                <footer> <small>&copy; copyrights 2023 Martyna Bogdanska Fotografia </small> </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+          nav.classList.add('menu-btn');  
+        })
+        mobileBtnExit.addEventListener('click', () => {
+          nav.classList.remove('menu-btn');  
+        })
+        var d = new Date(); page.currentYear = d.getFullYear();
+
+        const gallery = document.querySelector('.image-gallery');
+        const images = gallery.querySelectorAll('li');
+        const prevButton = gallery.querySelector('#prev-button');
+        const nextButton = gallery.querySelector('#next-button');
+        let currentImageIndex = 0;
+
+    </script>
+
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>
