@@ -6,13 +6,14 @@
     <title>Martyna Bogdańska Fotografia</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="navbar">
         <div class="container">
 
-            <a class="logo" href="#"> <img src="images/BLACK hori.png" alt="Martyna Bogdańska Fotografia"></a>
+            <a class="logo" href="index.html"> <img src="images/BLACK hori.png" alt="Martyna Bogdańska Fotografia"></a>
 
             <img src="images/menu.svg" id="mobile-cta" class="mobile-menu" alt="Otwórz Menu">
             <nav>
@@ -53,10 +54,22 @@
           </div>
         </div>
       </section>
-    <section class="portfolio-section">
+    <section id="anchor2" class="portfolio-section">
             <header>
                 <h1>Portfolio</h1>
             </header>
+            
+            <div class="dropdown">
+                <button id="dropdownButton" class="dropdown-button">Rodzaj sesji</button>
+                <ul id="dropdownMenu" class="dropdown-menu">
+                    <li><a href="#">ŚLUB</a></li>
+                    <li><a href="#">CHRZEST</a></li>
+                    <li><a href="sesje swiateczne.html">ŚWIĄTECZNE</a></li>
+                    <li><a href="#">PLENER</a></li>
+                    <li><a href="#">FOT. KULINARNA</a></li>
+                </ul>
+            </div>
+
             <div id="anchor2" class="portfolio-selection">
                 <div id="container">
                     <ul class="categories">
@@ -206,33 +219,22 @@
            </div>
         </div>
     </section>
-    <section class="instagram">
-        <div class="instalink">
-           <a href="https://www.instagram.com/martynabogdanskafotografia/?hl=pl"> @martynabogdanskafotografia </a> 
-        </div>
-        <div class="instagrid">
-            <dov class="row">
-                <div class="column">
-                    <img src="images/001.jpg" alt="Instagram">
-                </div>
-                <div class="column">
-                    <img src="images/002.jpg" alt="Instagram">
-                </div>
-                <div class="column">
-                    <img src="images/003.jpg" alt="Instagram">
-                </div>
-            </dov> 
-        </div>
+    <section class="lower">
+        <div class="logo">
+            <img src="images/BLACK hori.png" alt="Martyna Bogdańska Fotografia">
+          </div>
+          <div class="contact-info">
+            <p class="phone"><i class="fas fa-phone"></i> Telefon: 123-456-7890</p>
+            <a href="formularz kontaktowy.html"><p class="email"><i class="fas fa-envelope"></i> Email: info@example.com</p></a>
+            <a href="https://www.facebook.com/martynabogdanskafotografia"><p class="instagram"><i class="fab fa-facebook"></i> /martynabogdanskafotografia</p></a>
+            <a href="https://www.instagram.com/martynabogdanskafotografia"><p class="facebook"><i class="fab fa-instagram"></i> /martynabogdanskafotografia</p></a>
+          </div>
     </section>
 
     <div class="bottom">
         <div class="footer">
-            <div class="social">
-                <a class="btn" href="https://www.facebook.com/martynabogdanskafotografia"> <img src="images/facebook_button.png" alt="facebook"></a>
-                <a class="btn" href="https://www.instagram.com/martynabogdanskafotografia"> <img src="images/instagram_button.png" alt="instagram"></a>
-            </div>
             <div class="copyright">
-                <footer> <small>&copy; copyrights 2023 Martyna Bogdanska Fotografia </small> </footer>
+                <footer> <small>&copy; copyrights 2023 Martyna Bogdanska Fotografia | Designed by Dominik Bogdański </small> </footer>
             </div>
         </div>
     </div>
@@ -260,23 +262,21 @@
     <script>
         const heroimages = document.querySelectorAll('.hero-image');
         let index = 0;
-
         function slideshow() {
-        // Hide all images
         heroimages.forEach(image => image.classList.remove('active'));
-
-        // Show the next image
         heroimages[index].classList.add('active');
-
-        // Increment the index, looping back to 0 if necessary
         index = (index + 1) % heroimages.length;
-
-        // Wait for a few seconds before showing the next image
         setTimeout(slideshow, 5000);
         }
-
-        // Start the slideshow
         slideshow();
+    </script>
+    <script>
+        const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+        });
     </script>
 
 
