@@ -11,6 +11,10 @@ html {
     --gradient: linear-gradient(to bottom, #ffffff, #f9f6f6 25%, #faf7f7 50%, #f9f6f6 75%, #ffffff);
 }
 
+*:focus {
+    outline: none;
+}
+
 body {
     background: (var(--primary-color));
     margin: 0;
@@ -284,6 +288,7 @@ ul {
 }
 
 .portfolio-gallery1 {
+    margin-top: 124.5px;
     padding-top: 2em;
 }
 
@@ -440,32 +445,33 @@ nav {
     }
 }
 
-.form header {
-    margin: 0;
-    padding: 0.5em;
-    color: var(--secondary-color);
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
 .form {
+    margin-top: 124.5px;
     background-color: var(--footer);
     padding: 0;
     padding-bottom: 1em;
+
+    header {
+        margin: 0;
+        padding: 0.5em;
+        color: var(--secondary-color);
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: var(--primary-color);
+        padding-bottom: 50px;
+        padding-top: 0;
+    }
 }
 
 .mobile-menu-exit {
     padding-bottom: 2em;
     margin: .5em;
     cursor: pointer;
-}
-
-.form .container {
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    padding-bottom: 50px;
-    padding-top: 0;
 }
 
 input, select {
@@ -512,12 +518,16 @@ button:hover {
 }
 
 .thankyou {
+    margin-top: 124.5px;
     text-align: center;
-}
-
-.thankyou .message h1 {
     padding-top: 15%;
-    color: var(--secondary-color);
+    padding-bottom: 15%;
+    
+    .message h1 {
+        color: var(--secondary-color);
+        padding-left: 1em;
+        padding-right: 1em;
+    }
 }
 
 .homepagecta {
