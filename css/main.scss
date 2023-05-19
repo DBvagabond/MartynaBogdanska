@@ -152,6 +152,7 @@ ul {
     right: 20px;
 }
 
+
 .portfolio-section {
     color: var(--secondary-color);
     text-align: center;
@@ -512,7 +513,7 @@ button:hover {
 }
 
 .col-25, .col-75 {
-    width: 90%;
+    width: 88%;
     margin-top: 0;
     padding-left: 3%;
 }
@@ -566,7 +567,7 @@ button:hover {
         margin-top: 20px;
 
         p {
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         i {
@@ -581,6 +582,7 @@ button:hover {
     display: block;
     text-align: center;
     color: grey;
+    padding-top: 3em;
 
     .logofoot {
         display: none;
